@@ -1,11 +1,80 @@
-.bla {
-  background-color: blue;
-  display: grid;
-  grid-template-rows: 1fr 2fr 1fr;
-  grid-template-columns: repeat(3, 1fr);
-  width: 100%;
+:root {
+  --main-header-color: #BD2436;
+  --main-h1-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --main-text-color: #FFFFFF;
+  --main-form-text-color: #D4D4D4;
+
 }
 
-.bla div {
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: url("../img/background_login.jpg") no-repeat center bottom fixed;
+  background-size: cover;
+  min-height: 100vh;
+  min-width: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 5% 3%;
+  font-family: var(--main-h1-font);
+}
+
+body > * {
+  max-width: 90%;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 90%;
+}
+
+article a {
+  color: var(--main-header-color);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 3.125em; /* 50/16 */
+}
+
+article p {
   text-align: center;
+  font-weight: 200;
+  font-style: italic;
+  color: var(--main-text-color);
+}
+
+form {
+  margin-top: 10%;
+  display: grid;
+  /* grid-template: 2.25em / auto 1fr; /* 36/16 */
+  grid-template-columns: auto 1fr;
+  grid-auto-rows: 2.25em;
+  color: var(--main-text-color);
+  grid-row-gap: 1.25em; /* 20/16 */
+  width: 90%;
+}
+
+form label, form input {
+  height: 100%;
+  padding: 0.313em 0.625em; /* 5/16, 10/16 */
+  background: rgba(216,216,216,0.30);
+  border: 2px solid #D4D4D4;
+}
+
+form label {
+  display: flex;
+  align-items: center;
+  color: var(--main-form-text-color);
+  border-right: none;
+
+}
+
+form input {
+  border-left: none;
 }
