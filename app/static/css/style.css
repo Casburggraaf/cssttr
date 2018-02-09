@@ -1,9 +1,14 @@
+@font-face {
+  font-family: Ampersand;
+  src: local('Baskerville'), local('Goudy Old Style'), local('Palatino'), local('Book Antiqua');
+  unicode-range: U+26;
+}
+
 :root {
   --main-header-color: #BD2436;
-  --main-h1-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --main-font: Ampersand, "Helvetica Neue", Helvetica, Arial, sans-serif;
   --main-text-color: #FFFFFF;
   --main-form-text-color: #D4D4D4;
-
 }
 
 * {
@@ -21,8 +26,9 @@ body {
   align-items: center;
   flex-direction: column;
   padding: 5% 3%;
-  font-family: var(--main-h1-font);
+  font-family: var(--main-font);
 }
+
 
 body > * {
   max-width: 90%;
@@ -33,6 +39,11 @@ article {
   flex-direction: column;
   align-items: center;
   max-width: 90%;
+  max-width: min-content;
+}
+
+article img {
+  max-width: inherit;
 }
 
 article a {
@@ -49,6 +60,17 @@ article p {
   color: var(--main-text-color);
 }
 
+form::before {
+position: fixed;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+z-index: -1;
+background: rgba(0,0,0,.4);
+content: "";
+}
+
 form {
   margin-top: 10%;
   display: grid;
@@ -58,6 +80,7 @@ form {
   color: var(--main-text-color);
   grid-row-gap: 1.25em; /* 20/16 */
   width: 90%;
+  z-index: 2;
 }
 
 form label, form input {
@@ -77,4 +100,5 @@ form label {
 
 form input {
   border-left: none;
+  filter: blur(1px) contrast(.8) brightness(.8);
 }
