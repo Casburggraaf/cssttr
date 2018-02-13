@@ -3,7 +3,6 @@
   --main-h1-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
   --main-text-color: #FFFFFF;
   --main-form-text-color: #D4D4D4;
-
 }
 
 * {
@@ -11,10 +10,9 @@
 }
 
 body {
-  background: url("../img/background_login.jpg") no-repeat center bottom fixed;
+  background: url("../img/background_login.jpg") #23598F no-repeat center bottom fixed;
   background-size: cover;
   min-height: 100vh;
-  min-width: 100%;
   margin: 0;
   display: flex;
   justify-content: center;
@@ -25,7 +23,8 @@ body {
 }
 
 body > * {
-  max-width: 90%;
+  max-width: 34em;
+  width: 90%;
 }
 
 article {
@@ -52,7 +51,6 @@ article p {
 form {
   margin-top: 10%;
   display: grid;
-  /* grid-template: 2.25em / auto 1fr; /* 36/16 */
   grid-template-columns: auto 1fr;
   grid-auto-rows: 2.25em;
   color: var(--main-text-color);
@@ -63,7 +61,7 @@ form {
 form label, form input {
   height: 100%;
   padding: 0.313em 0.625em; /* 5/16, 10/16 */
-  background: rgba(216,216,216,0.30);
+  background: rgba(216, 216, 216, 0.3);
   border: 2px solid #D4D4D4;
 }
 
@@ -72,7 +70,6 @@ form label {
   align-items: center;
   color: var(--main-form-text-color);
   border-right: none;
-
 }
 
 form input {
